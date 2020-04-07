@@ -1,0 +1,18 @@
+server:
+  port: 8501
+
+spring:
+  application:
+    name: mango-hystrix
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name} #注册到consul的服务名称
+
+turbine:
+  instanceUrlSuffix: /hystrix.stream #指定收集路径
+  app-config: mango-consumer #指定了需要收集监控信息的服务名，多个以逗号进行区分
+  cluster-name-expression: new String('default') #指定集群名称，若为default则为默认集群，多个集群则通过此配置区分
+  combine-host-port: true #默认为false ，服务以host进行区分，若设置为true则以host+port进行区分

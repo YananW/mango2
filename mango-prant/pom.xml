@@ -19,6 +19,7 @@
         <module>../mango-cloud</module>
         <module>../mango-producer</module>
         <module>../mango-consumer</module>
+        <module>../mango-hystrix</module>
     </modules>
 
     <parent>
