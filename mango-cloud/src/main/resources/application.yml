@@ -1,0 +1,18 @@
+server:
+  port: ${PORT:8101} #服务端口
+
+spring:
+  application:
+    name: mango-cloud
+
+eureka:
+  client:
+    fetch-registry: true #服务发现，是否从eureka中获取注册信息
+    register-with-eureka: true #服务注册，是否将自己注册到eureka服务中
+    service-url: #Eureka客户端与Eureka服务端的交互地址，高可用状态配置对方的地址，单机状态配置自己（如果不配置则默认本机8761端口）
+      defaultZone: ${EUREKA_SERVER:http://eureka02:8102/eureka/}
+  server:
+    enable-self-preservation: false #是否开启自我保护模式
+    eviction-interval-timer-in-ms: 60000 #服务注册表清理间隔，单位毫秒默认是60*1000
+  instance:
+    hostname: ${EUREKA_DOMAIN:eureka01}

@@ -1,0 +1,35 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: mango-backup
+  #backup: datasource
+  boot:
+    admin:
+      client:
+        url: "http://localhost:8000"
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+
+
+mango:
+  backup:
+    datasource:
+      host: localhost
+      userName: root
+      password: root
+      database: per_system
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
