@@ -17,6 +17,8 @@
         <module>../mango-monitor</module>
         <module>../mango-cloud</module>
         <module>../mango-cloud</module>
+        <module>../mango-producer</module>
+        <module>../mango-consumer</module>
     </modules>
 
     <parent>
