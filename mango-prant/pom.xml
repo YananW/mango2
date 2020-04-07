@@ -20,6 +20,7 @@
         <module>../mango-producer</module>
         <module>../mango-consumer</module>
         <module>../mango-hystrix</module>
+        <module>../mango-zuul</module>
     </modules>
 
     <parent>

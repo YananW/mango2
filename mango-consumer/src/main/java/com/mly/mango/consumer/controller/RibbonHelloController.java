@@ -21,6 +21,7 @@ public class RibbonHelloController {
     @RequestMapping("/ribbon/call")
     public String call() {
 
+        System.out.println("-------------------");
         //调用服务。service-producer
         //LoadBalancerInterceptor会拦截并根据服务找到对应的服务
         String callServiceResult = restTemplate.getForObject("http://mango-producer/hello",String.class);
